@@ -10,7 +10,7 @@
 # There are some restrictions on what makes a valid project name
 # specification here:
 # https://packaging.python.org/specifications/core-metadata/#name
-name = "package_name" # Required
+name = "cryptoconfigparser" # Required
 
 # Versions should comply with PEP 440:
 # https://www.python.org/dev/peps/pep-0440/
@@ -22,7 +22,7 @@ version = "0.9.0" # Required
 # This is a one-line description or tagline of what your project does. This
 # corresponds to the "Summary" metadata field:
 # https://packaging.python.org/specifications/core-metadata/#summary
-description = "A package for python ..." # Optional
+description = "A simple wrapper of configparser to allow encrypt config." # Optional
 
 # This is an optional longer description of your project that represents
 # the body of text which users will see when they visit PyPI.
@@ -51,7 +51,7 @@ license = {file = "LICENSE.txt"}
 # Note that this is a list of additional keywords, separated
 # by commas, to be used to assist searching for the distribution in a
 # larger catalog.
-keywords = ["XXX", "cloudYYYevents"] # Optional
+keywords = ["configparser"] # Optional
 
 # This should be your name or the name of the organization who originally
 # authored the project, and a valid email address corresponding to the name
@@ -96,7 +96,9 @@ classifiers = [
 # https://packaging.python.org/discussions/install-requires-vs-requirements/
 dependencies = [
   # Optional
-  "XXX",
+  "aws-encryption-sdk",
+  "boto3",
+  "pycryptodome",
 ]
 
 # List additional groups of dependencies here (e.g. development
@@ -122,12 +124,19 @@ test = ["coverage"]
 # maintainers, and where to support the project financially. The key is
 # what's used to render the link text on PyPI.
 [project.urls] # Optional
-"Bug Reports" = "https://github.com/SatoshiImai/package_name/issues"
-"Homepage" = "https://github.com/SatoshiImai/package_name"
-"Source" = "https://github.com/SatoshiImai/package_name/"
+"Bug Reports" = "https://github.com/SatoshiImai/cryptoconfigparser/issues"
+"Homepage" = "https://github.com/SatoshiImai/cryptoconfigparser"
+"Source" = "https://github.com/SatoshiImai/cryptoconfigparser/"
 
 [build-system]
 # These are the assumed default build requirements from pip:
 # https://pip.pypa.io/en/stable/reference/pip/#pep-517-and-518-support
 build-backend = "setuptools.build_meta"
 requires = ["setuptools>=43.0.0", "wheel"]
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.pytest.ini_options]
+pythonpath = "src"
+testpaths = ["tests"]
