@@ -1,0 +1,3 @@
+aws-encryption-sdk
+boto3
+pycryptodome
