@@ -1,4 +1,4 @@
-PYTHON_VER			:= 3.11.5
+PYTHON_VER			:= 3.11.7
 VENV				:= $(PYTHON_VER)-cryptoconfigparser
 
 test_all:
